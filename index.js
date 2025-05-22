@@ -1,27 +1,28 @@
-// 1. Variáveis 
-let nome = "Hakuna-Matata";
-let xp = 3800;
 let nivel = "";
-const mensagemFinal = "O herói do nome ";
+let saldoVitorias = calcularNivel (158, 36);
 
-// 2. Estrutura de decisao 
-if (xp < 1000) {
+function calcularNivel(numVitorias, numDerrotas){
+    let somatorio = numVitorias - numDerrotas;
+   
+
+    if (somatorio <= 10){
     nivel = "Ferro";
-} else if (xp <= 2000) {
+    } else if (somatorio <= 20){
     nivel = "Bronze";
-} else if (xp <= 5000) {
+    } else if (somatorio <= 50){
     nivel = "Prata";
-} else if (xp <= 7000) {
+    }else if (somatorio <= 80){
     nivel = "Ouro";
-} else if (xp <= 8000) {
-    nivel = "Platina";
-} else if (xp <= 9000) {
-    nivel = "Ascendente";
-} else if (xp <= 10000) {
-    nivel = "Importal";
-} else {
-    nivel = "Radiante";
+    } else if (somatorio <= 90){
+    nivel = "Diamante";
+    } else if (somatorio <= 100){
+    nivel = "Lendário"; 
+    } else {
+    nivel = "Imortal";
+    }
+ 
+    return somatorio 
 }
 
-// 3. Saída 
-console.log(mensagemFinal + nome + " está no nível " + nivel);
+
+console.log("O Herói tem saldo de " + saldoVitorias +  " e está no nível " + nivel); 
